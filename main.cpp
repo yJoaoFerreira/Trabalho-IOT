@@ -1,8 +1,7 @@
 #include <iostream>
 
-int main()
-{
-    std::cout<<"Hello World";
-
+int main(){
+    
+    cout<<"Hello World";
     return 0;
 }
