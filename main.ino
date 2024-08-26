@@ -1,5 +1,5 @@
 void setup() {
-  // put your setup code here, to run once:
+  // coloque seu código setup aqui, para executar uma vez:
 
 }
 
