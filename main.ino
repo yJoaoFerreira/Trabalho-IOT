@@ -1,6 +1,6 @@
 void setup() {
   // coloque seu código setup aqui, para executar uma vez:
-
+  Serial.println("oi");
 }
 
 void loop() {
