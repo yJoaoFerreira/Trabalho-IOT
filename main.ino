@@ -5,5 +5,5 @@ void setup() {
 
 void loop() {
   // coloque seu código main aqui, para executar repetidamente:
-
+    Serial.println("tchau");
 }
