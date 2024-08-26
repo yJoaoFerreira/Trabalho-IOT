@@ -4,6 +4,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // coloque seu código main aqui, para executar repetidamente:
 
 }
