@@ -4,4 +4,4 @@
 - Professor: Lucas Floriano.
 - Microcontrolador utilizado: Arduino Uno.
 
-- Projeto: (Indefinido)
+- Projeto: (Indefinido).
