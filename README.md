@@ -6,4 +6,4 @@
 
 - IDE: Arduino IDE
 - Projeto (Arduino): (Indefinido).
-- Projeto (Esp32):
+- Projeto (Esp32): Uma aplicação para ajudar deficientes auditivos no trabalho.
