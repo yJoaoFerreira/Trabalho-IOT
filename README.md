@@ -5,4 +5,5 @@
 - Microcontrolador utilizado: Arduino Uno ou Esp32.
 
 - IDE: Arduino IDE
-- Projeto: (Indefinido).
+- Projeto (Arduino): (Indefinido).
+- Projeto (Esp32):
