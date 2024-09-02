@@ -5,4 +5,4 @@
 - Microcontrolador utilizado: Esp32.
 
 - IDE: Arduino IDE
-- Projeto (Esp32): Uma aplicação para ajudar deficientes auditivos no trabalho.
+- Projeto: Uma aplicação para ajudar deficientes auditivos no trabalho.
