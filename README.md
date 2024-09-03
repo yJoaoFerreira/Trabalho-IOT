@@ -4,5 +4,5 @@
 - Professor: Lucas Floriano.
 - Microcontrolador utilizado: Esp32.
 
-- IDE: Arduino IDE
+- IDE Utilizada: Arduino IDE
 - Projeto: Um dispositivo para ajudar deficientes auditivos no trabalho, sempre que eles estiverem sendo chamados, irá aparecer em uma tela a mesa que está o chamando.
