@@ -4,6 +4,6 @@ void setup() { // coloque seu código setup aqui, para executar uma vez:
 }
 
 void loop() { // coloque seu código main aqui, para executar repetidamente:
-    delay(1000); // Espera 1000 MS
+    delay(1000); // Espera 1000 MS (1 Segundo)
     Serial.println("tchau");
 }
