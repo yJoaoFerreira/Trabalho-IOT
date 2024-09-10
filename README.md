@@ -4,5 +4,4 @@
 - Professor: Lucas Floriano.
 - Microcontrolador: Esp32.
 
-- IDE: Arduino IDE
-- Projeto: Um dispositivo para ajudar deficientes auditivos em seu trabalho na elétrica, sempre que eles estiverem sendo chamados, irá aparecer em uma tela a mesa que está o chamando.
+- Projeto: Um dispositivo para ajudar deficientes auditivos em seu trabalho na elétrica, sempre que eles estiverem sendo chamados, irá aparecer em uma tela a mesa que está o chamando. A IDE utilizada para o projeto será o Arduino IDE.
