@@ -1,0 +1,16 @@
+              Início
+                |
+         LED começa aceso
+                |
+       Ler estado dos botões
+           /        \
+      Botão Claro   Botão Escuro
+       pressionado?  pressionado?
+           |             |
+     (Sim) |       	 | (Sim)
+           |             |
+       Apaga LED     Acende LED
+          LOW          HIGH
+           \            /
+            \          /
+          Volta para o loop
