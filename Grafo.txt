@@ -7,7 +7,7 @@
       Botão Claro   Botão Escuro
        pressionado?  pressionado?
            |             |
-     (Sim) |       	 | (Sim)
+     (Sim) |             | (Sim)
            |             |
        Apaga LED     Acende LED
           LOW          HIGH
