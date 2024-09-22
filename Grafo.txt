@@ -1,11 +1,11 @@
-              Início
-                |
-         LED começa aceso
-                |
-       Ler estado dos botões
-           /        \
+                Início
+                  |
+           LED começa aceso
+                  |
+         Ler estado dos botões
+            /           \
       Botão Claro   Botão Escuro
-       pressionado?  pressionado?
+      pressionado?  pressionado?
            |             |
      (Sim) |             | (Sim)
            |             |
