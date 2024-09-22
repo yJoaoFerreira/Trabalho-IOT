@@ -7,7 +7,7 @@ int estadoBotaoEscuro = 0;
 
 bool ledLigado = true;
 
-void setup() {
+void setup(){
   pinMode(ledPin, OUTPUT);
   pinMode(botaoClaroPin, INPUT);
   pinMode(botaoEscuroPin, INPUT);
@@ -15,16 +15,16 @@ void setup() {
   digitalWrite(ledPin, HIGH);
 }
 
-void loop() {
+void loop(){
   estadoBotaoClaro = digitalRead(botaoClaroPin);
   estadoBotaoEscuro = digitalRead(botaoEscuroPin);
 
-  if (estadoBotaoClaro == HIGH) {
+  if (estadoBotaoClaro == HIGH){
     ledLigado = false;
     digitalWrite(ledPin, LOW);
   }
 
-  if (estadoBotaoEscuro == HIGH) {
+  if (estadoBotaoEscuro == HIGH){
     ledLigado = true;
     digitalWrite(ledPin, HIGH);
   }
