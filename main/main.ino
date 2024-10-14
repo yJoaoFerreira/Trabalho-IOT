@@ -1,7 +1,10 @@
 #include "WiFi.h"
+#include "SevSeg.h"
+
+// Declarar pinos dos botões, leds e do display fora do void setup e loop pra serem globais.
+// DIferenciar o que é cada coisa dos pinos por comentários.
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
   Serial.println("Hello, ESP32!");
   Serial.println("Initializing WiFi...");
@@ -15,8 +18,6 @@ void setup() {
 }
 
 void loop() {
-  
-  
   switch() {
   case 34:
     Serial.println('1');
