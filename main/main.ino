@@ -13,6 +13,15 @@ const int botao4 = 33;
 const int botao5 = 25;
 const int ledPin = 2;
 
+SevSeg sevseg; // Instância para o display de 7 segmentos
+
+// Definição dos IPs das estações
+const char* Estacao1 = "192.168.1.101";
+const char* Estacao2 = "192.168.1.102";
+const char* Estacao3 = "192.168.1.103";
+const char* Estacao4 = "192.168.1.104";
+const char* Estacao5 = "192.168.1.105";
+
 void setup() {
   Serial.begin(115200);
   Serial.println("Hello, ESP32!");
