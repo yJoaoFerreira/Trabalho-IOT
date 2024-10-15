@@ -5,17 +5,20 @@
 const char* ssid = "NOME_DA_REDE";
 const char* password = "SENHA_DA_REDE";
 
+// Definição dos pinos dos botões e do LED
+const int botao1 = 34;
+const int botao2 = 35;
+const int botao3 = 32;
+const int botao4 = 33;
+const int botao5 = 25;
+const int ledPin = 2;
+
 void setup() {
   Serial.begin(115200);
   Serial.println("Hello, ESP32!");
   Serial.println("Initializing WiFi...");
   WiFi.mode(WIFI_STA);
   Serial.println("Setup done!");
-  pinMode(34, INPUT);
-  pinMode(35, INPUT);
-  pinMode(32, INPUT);
-  pinMode(33, INPUT);
-  pinMode(25, INPUT);
 }
 
 void loop() {
