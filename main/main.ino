@@ -22,6 +22,12 @@ const char* Estacao3 = "192.168.1.103";
 const char* Estacao4 = "192.168.1.104";
 const char* Estacao5 = "192.168.1.105";
 
+unsigned long tempoPiscaLed = 0; // Variável para controlar o tempo de piscada do LED
+bool ledLigado = false; // Flag para indicar se o LED está ligado
+int contadorPisca = 0; // Contador para limitar o número de piscadas do LED
+
+WiFiServer server(80); // Criação de um servidor HTTP na porta 80
+
 void setup() {
   Serial.begin(115200);
   Serial.println("Hello, ESP32!");
