@@ -1,8 +1,9 @@
-#include "WiFi.h"
-#include "SevSeg.h"
+#include "WiFi.h" // Biblioteca para conexão Wi-Fi
+#include "SevSeg.h" // Biblioteca para controle do display de 7 segmentos
 
-// Declarar pinos dos botões, leds e do display fora do void setup e loop pra serem globais.
-// DIferenciar o que é cada coisa dos pinos por comentários.
+// Credenciais da rede Wi-Fi
+const char* ssid = "NOME_DA_REDE";
+const char* password = "SENHA_DA_REDE";
 
 void setup() {
   Serial.begin(115200);
