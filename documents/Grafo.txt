@@ -1,8 +1,16 @@
-       (N1) 
-       / | \
-     /   |   \
-  (N2)--(N3)--(N5)
-     \   |   /
-       \ | /
-       (N4)
-
+          (Sistema de Comunicação)
+                 /   |      \
+                /    |       \
+           (Botão 1)(Botão 2)(Botão 3)
+              |         |         |
+        (Estação 1) (Estação 2) (Estação 3)
+              \         |         /
+               \        |        /
+                 \      |       /
+               (Botão 4)(Botão 5)
+                   |         |
+              (Estação 4)(Estação 5)
+                   |
+                (LED Indicador)
+                   |
+            (WiFi Server)
