@@ -14,9 +14,12 @@ void setup() {
   for (int i = 0; i < 7; i++) {
     pinMode(LEDs[i], OUTPUT);
   }
+  
+  // Inicializa a comunicação serial
+  Serial.begin(115200);
+  Serial.println("Digite um número de 1 a 5:");
 }
 
-// Função para exibir um número no display de 7 segmentos
 void mostrarNumero(int numero[]) {
   for (int i = 0; i < 7; i++) {
     digitalWrite(LEDs[i], numero[i]);
@@ -24,9 +27,18 @@ void mostrarNumero(int numero[]) {
 }
 
 void loop() {
-  // Loop para exibir os números de 1 a 5 com atraso de 1 segundo
-  for (int i = 0; i < 5; i++) {
-    mostrarNumero(numeros[i]);
-    delay(1000);  // Espera 1 segundo antes de mudar para o próximo número
+  // Verifica se há dados disponíveis na entrada serial
+  if (Serial.available() > 0) {
+    int numeroDigitado = Serial.parseInt();  // Lê o número digitado
+
+    // Verifica se o número está dentro do intervalo permitido (1 a 5)
+    if (numeroDigitado >= 1 && numeroDigitado <= 5) {
+      mostrarNumero(numeros[numeroDigitado - 1]);  // Exibe o número correspondente
+    } else {
+      Serial.println("Por favor, digite um número válido de 1 a 5.");
+    }
+    
+    // Aguarda um tempo para evitar múltiplas leituras do mesmo número
+    delay(1000);  // Atraso para não sobrecarregar a leitura
   }
 }
