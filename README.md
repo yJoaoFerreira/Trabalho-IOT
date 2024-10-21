@@ -30,7 +30,6 @@ O dispositivo foi projetado para ajudar profissionais deficientes auditivos, fac
 - **IDE do Arduino**: Utilizada para programar os ESP32.
 - Bibliotecas:
   - **WiFi.h**: Para conectar à rede Wi-Fi.
-  - **SevSeg**: Para controlar o display de 7 segmentos.
 
 ## Configuração do Sistema
 
