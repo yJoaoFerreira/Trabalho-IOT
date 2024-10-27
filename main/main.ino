@@ -1,44 +1,68 @@
-int LEDs[] = {22, 23, 2, 4, 19, 18, 5};  // Pinos conectados ao display de 7 segmentos
+// Pinos conectados aos segmentos do display de 7 segmentos
+int LEDs[] = {15, 4, 16, 17, 5, 18, 19};
 
-// Array bidimensional contendo os estados dos segmentos para os números de 1 a 5
-int numeros[5][7] = {
-  {1, 0, 0, 1, 1, 1, 1},  // Número 1
-  {0, 0, 1, 0, 0, 1, 0},  // Número 2
-  {0, 0, 0, 0, 1, 1, 0},  // Número 3
-  {1, 0, 0, 1, 1, 0, 0},  // Número 4
-  {0, 1, 0, 0, 1, 0, 0}   // Número 5
+// Mapeamento de cada número para os segmentos correspondentes (anodo comum)
+// Cada bit representa um segmento do display, onde 0 significa ligado e 1 significa desligado
+const uint segmentMap[6] = {
+  0b11000000, // Número 0
+  0b11111001, // Número 1
+  0b10100100, // Número 2
+  0b10110000, // Número 3
+  0b10011001, // Número 4
+  0b10010010  // Número 5
 };
 
+// Variável para armazenar o número a ser exibido
+int num = 0;
+
+// Declaração da função que exibe um número no display
+void displayNumber(int num);
+
 void setup() {
-  // Configura os pinos do display como saídas
+  // Configura os pinos do display como saídas e os botões como entradas
   for (int i = 0; i < 7; i++) {
     pinMode(LEDs[i], OUTPUT);
   }
   
-  // Inicializa a comunicação serial
-  Serial.begin(115200);
-  Serial.println("Digite um número de 1 a 5:");
-}
-
-void mostrarNumero(int numero[]) {
-  for (int i = 0; i < 7; i++) {
-    digitalWrite(LEDs[i], numero[i]);
-  }
+  // Configuração dos pinos dos botões
+  pinMode(34, INPUT); // Botão para o número 1
+  pinMode(35, INPUT); // Botão para o número 2
+  pinMode(32, INPUT); // Botão para o número 3
+  pinMode(33, INPUT); // Botão para o número 4
+  pinMode(25, INPUT); // Botão para o número 5
 }
 
 void loop() {
-  // Verifica se há dados disponíveis na entrada serial
-  if (Serial.available() > 0) {
-    int numeroDigitado = Serial.parseInt();  // Lê o número digitado
+  // Verifica o estado de cada botão e atribui o número correspondente
+  if (digitalRead(34) == HIGH) {
+    num = 1;
+    displayNumber(num);
+  } else if (digitalRead(35) == HIGH) {
+    num = 2;
+    displayNumber(num);
+  } else if (digitalRead(32) == HIGH) {
+    num = 3;
+    displayNumber(num);
+  } else if (digitalRead(33) == HIGH) {
+    num = 4;
+    displayNumber(num);
+  } else if (digitalRead(25) == HIGH) {
+    num = 5;
+    displayNumber(num);
+  }
+}
 
-    // Verifica se o número está dentro do intervalo permitido (1 a 5)
-    if (numeroDigitado >= 1 && numeroDigitado <= 5) {
-      mostrarNumero(numeros[numeroDigitado - 1]);  // Exibe o número correspondente
-    } else {
-      Serial.println("Por favor, digite um número válido de 1 a 5.");
-    }
-    
-    // Aguarda um tempo para evitar múltiplas leituras do mesmo número
-    delay(1000);  // Atraso para não sobrecarregar a leitura
+// Função para exibir o número selecionado no display de 7 segmentos
+void displayNumber(int num) {
+  // Certifica-se de que o número está dentro do intervalo (0-5)
+  if (num < 0 || num > 5) return;
+
+  // Pega o mapeamento de segmentos para o número fornecido
+  int segments = segmentMap[num];
+
+  // Atualiza cada segmento de acordo com o mapeamento
+  for (int i = 0; i < 7; i++) {
+    // Liga ou desliga cada segmento conforme o valor do bit correspondente
+    digitalWrite(LEDs[i], (segments >> i) & 0x01);
   }
 }
