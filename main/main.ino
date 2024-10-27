@@ -1,44 +1,89 @@
-int LEDs[] = {22, 23, 2, 4, 19, 18, 5};  // Pinos conectados ao display de 7 segmentos
+int LEDs[] = {15, 4, 16, 17, 5, 18, 19};  // Pinos conectados ao display de 7 segmentos
 
-// Array bidimensional contendo os estados dos segmentos para os números de 1 a 5
-int numeros[5][7] = {
-  {1, 0, 0, 1, 1, 1, 1},  // Número 1
-  {0, 0, 1, 0, 0, 1, 0},  // Número 2
-  {0, 0, 0, 0, 1, 1, 0},  // Número 3
-  {1, 0, 0, 1, 1, 0, 0},  // Número 4
-  {0, 1, 0, 0, 1, 0, 0}   // Número 5
+
+const uint segmentMap[6] = {
+
+ // Anodo comum
+  0b11000000, // 0
+  0b11111001, // 1
+  0b10100100, // 2
+  0b10110000, // 3
+  0b10011001, // 4
+  0b10010010, // 5
+  
+
 };
+
+int num = 0;
+
+void displayNumber(int num);
 
 void setup() {
   // Configura os pinos do display como saídas
+
   for (int i = 0; i < 7; i++) {
     pinMode(LEDs[i], OUTPUT);
+    pinMode(34, INPUT); // Botão1
+    pinMode(35, INPUT); // Botão2
+    pinMode(32, INPUT); // Botão3
+    pinMode(33, INPUT); // Botão4
+    pinMode(25, INPUT); // Botão5
+
+    digitalWrite(LEDs[i], HIGH);
   }
-  
-  // Inicializa a comunicação serial
-  Serial.begin(115200);
-  Serial.println("Digite um número de 1 a 5:");
+
 }
 
-void mostrarNumero(int numero[]) {
-  for (int i = 0; i < 7; i++) {
-    digitalWrite(LEDs[i], numero[i]);
-  }
-}
+
+
 
 void loop() {
   // Verifica se há dados disponíveis na entrada serial
-  if (Serial.available() > 0) {
-    int numeroDigitado = Serial.parseInt();  // Lê o número digitado
-
-    // Verifica se o número está dentro do intervalo permitido (1 a 5)
-    if (numeroDigitado >= 1 && numeroDigitado <= 5) {
-      mostrarNumero(numeros[numeroDigitado - 1]);  // Exibe o número correspondente
-    } else {
-      Serial.println("Por favor, digite um número válido de 1 a 5.");
-    }
+    int guardabotao1 = digitalRead(34);
+    int guardabotao2 = digitalRead(35);
+    int guardabotao3 = digitalRead(32);
+    int guardabotao4 = digitalRead(33);
+    int guardabotao5 = digitalRead(25);
     
-    // Aguarda um tempo para evitar múltiplas leituras do mesmo número
-    delay(1000);  // Atraso para não sobrecarregar a leitura
+    if (guardabotao1 > 0){
+      num = 1;
+      displayNumber(num);
+    }
+
+    if (guardabotao2 > 0){
+      num = 2;
+      displayNumber(num);
+    }
+
+    if (guardabotao3 > 0){
+      num = 3;
+      displayNumber(num);
+    }
+
+    if (guardabotao4 > 0){
+      num = 4;
+      displayNumber(num);
+    }
+
+    if (guardabotao5 > 0){
+      num = 5;
+      displayNumber(num);
+    }
+
+    guardabotao1 = 0;
+    guardabotao2 = 0;
+    guardabotao3 = 0;
+    guardabotao4 = 0;
+    guardabotao5 = 0;
+}
+
+
+void displayNumber(int num) {
+  if (num > 5) return;
+
+  int segments = segmentMap[num];
+
+  for (int i = 0; i < 7; i++){
+    digitalWrite(LEDs[i], (segments >> i) & 0x01);
   }
 }
