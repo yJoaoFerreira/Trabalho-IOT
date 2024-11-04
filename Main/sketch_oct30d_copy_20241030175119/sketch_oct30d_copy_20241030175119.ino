@@ -144,12 +144,14 @@ void loop() {
         udp.beginPacket("192.168.3.2", udpPort); // IP do ESP32 AP
         udp.print("Estacao01");
         udp.endPacket();
+        Serial.println("Botão 2 foi apertardo");
     }
 
      if (guardacancel > 0) {
         udp.beginPacket("192.168.3.2", udpPort); // IP do ESP32 AP
         udp.print("Cancela");
         udp.endPacket();
+        Serial.println("Cancela foi Apertardo");
     }
 
     guardabotao1 = 0;

@@ -1,0 +1,96 @@
+
+2024-11-04 16:32:23 - Ponto de Acesso criado!
+2024-11-04 16:32:23 - Endereço IP do AP: 192.168.3.1
+2024-11-04 16:33:09 - Ponto de Acesso criado!
+2024-11-04 16:33:09 - Endereço IP do AP: 192.168.3.1
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:33:11 - Botão 2 foi apertardo
+2024-11-04 16:35:38 - Botão 2 foi apertardo
+2024-11-04 16:35:38 - Botão 2 foi apertardo
+2024-11-04 16:35:38 - Botão 2 foi apertardo
+2024-11-04 16:35:38 - Botão 2 foi apertardo
+2024-11-04 16:35:38 - Botão 2 foi apertardo
+2024-11-04 16:35:38 - Botão 2 foi apertardo
+2024-11-04 16:35:39 - Cancela foi Apertardo
+2024-11-04 16:35:39 - Cancela foi Apertardo
+2024-11-04 16:35:39 - Cancela foi Apertardo
+2024-11-04 16:35:39 - Cancela foi Apertardo
+2024-11-04 16:35:39 - Cancela foi Apertardo
+2024-11-04 16:35:39 - Cancela foi Apertardo
+2024-11-04 16:35:41 - Botão 2 foi apertardo
+2024-11-04 16:35:41 - Botão 2 foi apertardo
+2024-11-04 16:35:41 - Botão 2 foi apertardo
+2024-11-04 16:35:41 - Botão 2 foi apertardo
+2024-11-04 16:35:41 - Botão 2 foi apertardo
+2024-11-04 16:35:41 - Botão 2 foi apertardo
+2024-11-04 16:40:12 - Ponto de Acesso criado!
+2024-11-04 16:40:12 - Endereço IP do AP: 192.168.3.1
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:14 - Botão 2 foi apertardo
+2024-11-04 16:40:16 - Cancela foi Apertardo
+2024-11-04 16:40:16 - Cancela foi Apertardo
+2024-11-04 16:40:16 - Cancela foi Apertardo
+2024-11-04 16:40:16 - Cancela foi Apertardo
+2024-11-04 16:40:16 - Cancela foi Apertardo
+2024-11-04 16:40:16 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:19 - Cancela foi Apertardo
+2024-11-04 16:40:21 - Botão 2 foi apertardo
+2024-11-04 16:40:21 - Botão 2 foi apertardo
+2024-11-04 16:40:21 - Botão 2 foi apertardo
+2024-11-04 16:40:21 - Botão 2 foi apertardo
+2024-11-04 16:40:21 - Botão 2 foi apertardo
+2024-11-04 16:40:21 - Botão 2 foi apertardo
+2024-11-04 16:40:24 - Botão 2 foi apertardo
+2024-11-04 16:40:24 - Botão 2 foi apertardo
+2024-11-04 16:40:24 - Botão 2 foi apertardo
+2024-11-04 16:40:24 - Botão 2 foi apertardo
+2024-11-04 16:40:24 - Botão 2 foi apertardo
+2024-11-04 16:40:24 - Botão 2 foi apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:26 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
+2024-11-04 16:40:31 - Cancela foi Apertardo
