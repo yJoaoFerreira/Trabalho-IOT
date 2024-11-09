@@ -30,6 +30,8 @@ O dispositivo foi projetado para ajudar profissionais deficientes auditivos, fac
 - **IDE do Arduino**: Utilizada para programar os ESP32.
 - Bibliotecas:
   - **WiFi.h**: Para conectar à rede Wi-Fi.
+  - **WifiUDP**: Biblioteca de WiFi com o protocolo UDP.
+
 
 ## Configuração do Sistema
 
@@ -49,7 +51,7 @@ Cada ESP32 deve estar conectado à mesma rede Wi-Fi e utilizar **IP fixo** para 
 - **IDE do Arduino**: [Link para download](https://www.arduino.cc/en/software).
 - Bibliotecas:
   - **WiFi.h**: Incluída com a placa ESP32.
-  - **SevSeg**: Para controle do display de 7 segmentos.
+  - **WifiUDP**: Biblioteca de WiFi com o protocolo UDP.
 
 ### 2. Configuração da Rede:
 - Abra o arquivo `main.ino` na IDE do Arduino.
