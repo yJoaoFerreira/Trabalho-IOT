@@ -1,96 +1,88 @@
+Aqui está um exemplo de documentação README para o seu projeto ESP32:
 
-# Sistema de Comunicação entre Estações
+---
 
-## Descrição do Projeto
+# ESP32 UDP Display Controller
 
-Este projeto foi desenvolvido como parte do Trabalho da Disciplina Extensionista de IoT do curso de Análise e Desenvolvimento de Sistemas (ADS), sob orientação do Professor **Lucas Floriano**. Ele utiliza módulos ESP32 para criar um sistema de comunicação que auxilia deficientes auditivos em um ambiente de trabalho na elétrica. Cada estação de trabalho pode solicitar a atenção de outra estação através de botões, e a estação solicitada exibirá o número da mesa chamadora em um **display de 7 segmentos**, enquanto um **LED intermitente** indica a solicitação.
-
-### Objetivo do Projeto
-
-O dispositivo foi projetado para ajudar profissionais deficientes auditivos, facilitando a comunicação entre diferentes estações de trabalho. Sempre que um colega de trabalho fizer uma solicitação, o profissional será notificado por meio de um display, que mostrará o número da estação que está solicitando atenção. Além disso, um LED piscará por 2 minutos como sinal visual de notificação.
+Este projeto controla um display de 7 segmentos e um LED usando o ESP32, que se conecta a uma rede Wi-Fi e recebe comandos via UDP para exibir informações específicas no display.
 
 ## Funcionalidades
 
-- Cada estação possui 5 botões que permitem solicitar a atenção de outra estação de trabalho.
-- Quando uma estação recebe uma solicitação, o LED intermitente pisca por 2 minutos.
-- O display de 7 segmentos da estação solicitada exibe o número da mesa que fez a solicitação.
-- O sistema utiliza comunicação via rede **Wi-Fi** para enviar as solicitações entre as estações.
-- Alimentação das estações via **fonte de 5V**.
+- Conexão do ESP32 a uma rede Wi-Fi como Access Point.
+- Recepção de pacotes UDP para controlar a exibição de números no display de 7 segmentos.
+- Controle de um LED indicador, que pisca enquanto um número está sendo exibido.
+- Integração de botões para diferentes funções, como enviar comandos UDP ou cancelar a exibição.
 
-## Componentes Utilizados
+## Componentes Usados
 
-### Hardware:
-- **ESP32**: Utilizado como microcontrolador de cada estação.
-- **Botões**: 5 botões por estação para fazer as solicitações.
-- **LED**: Para indicar visualmente a solicitação recebida.
-- **Display de 7 Segmentos**: Mostra o número da estação solicitante.
-- Fonte de alimentação **5V**.
+- **ESP32**: Placa de desenvolvimento principal.
+- **Display de 7 segmentos**: Controlado pelos pinos 15, 4, 16, 17, 5, 18 e 19.
+- **LED**: Conectado ao pino 2.
+- **Botões**: Configurados para controle de eventos e envio de pacotes UDP.
 
-### Software:
-- **IDE do Arduino**: Utilizada para programar os ESP32.
-- Bibliotecas:
-  - **WiFi.h**: Para conectar à rede Wi-Fi.
-  - **WifiUDP**: Biblioteca de WiFi com o protocolo UDP.
+## Conexões e Configurações de Hardware
 
+| Componente | Pino ESP32 | Função         |
+|------------|------------|----------------|
+| LED        | 2          | Indicador      |
+| Botão 1    | 12         | Botão Stop     |
+| Botão 2    | 13         | Botão Cancelar |
+| Display 7 segmentos | 15, 4, 16, 17, 5, 18, 19 | Exibição de números |
 
-## Configuração do Sistema
+## Dependências
 
-Cada ESP32 deve estar conectado à mesma rede Wi-Fi e utilizar **IP fixo** para facilitar a comunicação entre as estações. As solicitações são enviadas via **TCP**, onde cada estação pode solicitar a atenção de outra enviando o número do seu botão correspondente à estação desejada.
+- **WiFi.h**: Biblioteca para conectar o ESP32 ao Wi-Fi.
+- **WiFiUdp.h**: Biblioteca para comunicação UDP.
 
-### Conexões de Hardware:
-1. **Botões**: Conectados aos pinos GPIO dos ESP32.
-2. **LED**: Conectado ao pino GPIO 2 (ou outro disponível).
-3. **Display de 7 Segmentos**: Conectado aos pinos para controle dos segmentos e dígitos, conforme configurado no código.
+## Instalação
 
-### Pinagem do Display de 7 Segmentos:
-- Utiliza a biblioteca **SevSeg** para configuração e controle do display. Certifique-se de ajustar a pinagem de acordo com o hardware específico.
+1. **Clone este repositório**:
+   ```bash
+   git clone https://github.com/yJoaoFerreira/Trabalho-IOT.git
+   ```
 
-## Como Usar
+2. **Abra o projeto no Arduino IDE** e configure a placa para **ESP32**.
 
-### 1. Requisitos de Software:
-- **IDE do Arduino**: [Link para download](https://www.arduino.cc/en/software).
-- Bibliotecas:
-  - **WiFi.h**: Incluída com a placa ESP32.
-  - **WifiUDP**: Biblioteca de WiFi com o protocolo UDP.
+3. **Altere as configurações de Wi-Fi**:
+   - Abra o arquivo `.ino` e modifique os valores de `ssid` e `password` para corresponder à sua rede.
 
-### 2. Configuração da Rede:
-- Abra o arquivo `main.ino` na IDE do Arduino.
-- Atualize as credenciais de Wi-Fi no código:
-  ```cpp
-  const char* ssid = "NOME_DA_REDE";
-  const char* password = "SENHA_DA_REDE";
-  ```
-- Defina IPs fixos para cada estação conforme a necessidade do projeto.
+4. **Compile e faça o upload do código** para a placa ESP32.
 
-### 3. Carregar o Código:
-- Conecte o ESP32 ao computador via USB.
-- Selecione a placa **ESP32** na IDE do Arduino (Ferramentas > Placa > ESP32).
-- Carregue o código para cada uma das estações, ajustando o IP de cada uma.
+## Funcionamento
 
-### 4. Funcionamento:
-- Ao pressionar um botão em uma estação, a solicitação será enviada para a estação correspondente.
-- A estação solicitada acenderá seu LED e exibirá o número da estação chamadora no display de 7 segmentos por 2 minutos.
+### Inicialização
 
-## Arquitetura do Código
+- O ESP32 se conecta ao Access Point configurado (`Com5est_AP`) e inicia o servidor UDP na porta `12345`.
+- O display é configurado para exibir números e o LED está pronto para indicar eventos.
 
-### Setup:
-- Conecta o ESP32 à rede Wi-Fi, inicializa o servidor para receber solicitações e configura os pinos dos botões, LED e display de 7 segmentos.
+### Comandos UDP
 
-### Loop:
-- **Envio de Solicitação**: Quando um botão é pressionado, a estação envia uma mensagem para o IP da estação chamada.
-- **Recepção de Solicitação**: A estação solicitada recebe a mensagem via TCP, pisca o LED e exibe o número da estação chamadora.
+O ESP32 recebe os seguintes comandos via UDP:
+- **"Estacao01"**: Exibe o número 1 no display e inicia a piscagem do LED por 30 segundos.
+- **"Estacao02"**: Exibe o número 2 no display e inicia a piscagem do LED por 30 segundos.
+- **"Cancela"**: Apaga o display e cancela a piscagem do LED.
 
-### Funções Importantes:
-- **`enviarSolicitacao()`**: Envia uma solicitação para outra estação.
-- **`piscarLed()`**: Controla o LED intermitente.
-- **`exibirEstacao()`**: Exibe o número da estação solicitante no display.
+### Botões
 
-## Aplicações Futuras
+- **Botão Stop**: Apaga o display de 7 segmentos.
+- **Botão Cancelar**: Envia o comando "Cancela" via UDP para o Access Point.
 
-- **Expansão do Sistema**: O sistema pode ser expandido para suportar mais estações ou até outras formas de comunicação, como alertas sonoros ou visuais adicionais.
-- **Interface Web**: Adicionar uma interface web para configuração das estações e ajustes em tempo real.
-- **Segurança**: Implementar criptografia para aumentar a segurança nas transmissões de dados.
+### Funções
 
-## Licença
+- `displayNumber(uint8_t num)`: Exibe o número no display.
+- `piscar_led()`: Pisca o LED enquanto o número está exibido.
+- `apagarDisplay()`: Limpa o display e redefine as variáveis.
 
-Este projeto está licenciado sob a licença MIT. Você pode utilizá-lo e modificá-lo conforme necessário.
+## Personalização
+
+- Altere os números a serem exibidos ou o comportamento do LED ajustando os valores na função `displayNumber()` e na lógica do `loop()`.
+
+## Exemplo de Uso
+
+1. Configure e ligue o ESP32, que se conectará ao AP e exibirá o endereço IP no monitor serial.
+2. Envie pacotes UDP com os comandos “Estacao01” ou “Estacao02” para exibir números.
+3. Pressione os botões para testar as funcionalidades locais de cancelamento e parada do display.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir **issues** ou enviar **pull requests**.
