@@ -1,7 +1,3 @@
-Aqui está um exemplo de documentação README para o seu projeto ESP32:
-
----
-
 # ESP32 UDP Display Controller
 
 Este projeto controla um display de 7 segmentos e um LED usando o ESP32, que se conecta a uma rede Wi-Fi e recebe comandos via UDP para exibir informações específicas no display.
